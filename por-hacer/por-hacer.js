@@ -62,9 +62,17 @@ const getListado = () => {
 
 //funcion mas simplificada que la de arriba
 //pero se pinta el array en el fichero principal
-const getListado2 = () => {
+const getListado2 = (completado) => {
 
     cargarDB();
+
+    if (completado === 'all') {
+        for (let i = 0; i < listadoPorHacer.length; i++) {
+            listadoPorHacer[i].completado = true;
+        }
+        guardarDB();
+    }
+
     return listadoPorHacer;
 }
 
