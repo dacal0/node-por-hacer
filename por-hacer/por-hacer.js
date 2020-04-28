@@ -68,7 +68,7 @@ const getListado2 = (completado) => {
 
     if (completado === 'all') {
         for (let i = 0; i < listadoPorHacer.length; i++) {
-            listadoPorHacer[i].completado = true;
+            listadoPorHacer[i].completado = false;
         }
         guardarDB();
     }
@@ -87,7 +87,7 @@ const actualizar = (descripcion, completado = true) => {
         guardarDB();
         return true;
     } else {
-        return false;
+        return index;
     }
 }
 
